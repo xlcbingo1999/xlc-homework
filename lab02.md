@@ -5,6 +5,10 @@ title: 我的RPG游戏开发
 
 # 我的RPG游戏开发
 
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/2.gif)
+
+游戏预览，因为游戏底图很大所以只能截取一点点了。
+
 ## 一、前期准备
 
 作为一个中国普通大学生，我无法利用最最最最最简单的语言从头开始制作游戏，所以我们必须有一个制作游戏的高级软件，这个时候我的目光聚焦到了[Construct](https://www.scirra.com/construct2)。
