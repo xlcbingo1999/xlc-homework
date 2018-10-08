@@ -5,7 +5,7 @@ title: 我的RPG游戏开发
 
 # 我的RPG游戏开发
 
-![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/2.gif)
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏.gif)
 
 游戏预览，因为游戏底图很大所以只能截取一点点了。
 
