@@ -5,7 +5,7 @@ title: 游戏策划和设计
 
 楔子(Setting)：很久很久以前，巨龙突然出现，它会分裂，带来灾难，带走公主。勇者达拉崩吧带上最好的地雷枪，翻过最高的山，拯救公主。
 
-玩法(Gameplay)：玩家射死巨龙，杀的越多越好。玩家被杀，任务失败。玩家可使用键盘左右键移动躲避巨龙，用鼠标射击。 
+玩法(Gameplay)：玩家射死巨龙，杀的越多越好。玩家被杀，任务失败。玩家可使用键盘左右键移动躲避巨龙，用鼠标发出地雷。 
 
 人设与道具（Game Sprites）：
 
@@ -158,3 +158,10 @@ Boss: 红巨龙"血量极厚
 |              | Destory                                   |
 
 +--------------+-------------------------------------------+
+
+游戏预览：
+
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏2.gif)
+
+
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏3.gif)
