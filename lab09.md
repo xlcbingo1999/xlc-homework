@@ -1,93 +1,274 @@
 ---
 layout: default
-title: python 交互式编程实验报告
+title: 自顶向下，逐步求精
 ---
 
-# python 交互式编程实验报告
+# 自顶向下，逐步求精
 
-## 一、实验目的
+## 一、自顶向下
 
-1) 了解“解释型”语言 python的基本语句和使用方法；
+从维基百科上，我们能够查到自顶向下思想的解释。
 
-2) 使用 python 做一些相对较复杂的计算。
+链接：https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design
 
-## 二、实验过程
+为方便读者阅读，我把维基百科中的部分重要内容摘录并翻译。
 
-1) 在软工三班学委的帮助下，我先了解了Python的基本用法。
+A top-down approach (also known as stepwise design and in some cases used as a synonym of decomposition) is essentially the breaking down of a system to gain insight into its compositional sub-systems in a reverse engineering fashion. 
 
-附上学委精心制作的链接: https://ks0508.github.io/SE-project/QA2/QA2
+自上而下的‎‎方法 (也称为‎‎逐步设计‎‎, 在某些情况下也叫分解‎‎) 本质上是对一个系统的分解, 以便在逆向工程中深入了解其组成子系统的内容。
 
-2) 阅读必要的基本知识
+In a top-down approach an overview of the system is formulated, specifying, but not detailing, any first-level subsystems. Each subsystem is then refined in yet greater detail, sometimes in many additional subsystem levels, until the entire specification is reduced to base elements. 
 
-为了完成对高数和线代作业的简化，我先了解了Python Numpy的相关内容。
+‎在自上而下的方法中, 系统的概述被制定出来, 而不是详细说明任何第一级子系统。然后对每个子系统进行更详细的改进, 有时在许多额外的子系统级别中, 直到整个规范简化为基本元素。‎
 
-[链接](https://zhuanlan.zhihu.com/p/20878530)
+![](http://p.ananas.chaoxing.com/star/1024_0/1386903028919afxat.jpg)
 
-3) 搜集课本的题目
+在维基百科中，自顶向下的思想不仅运用与计算机领域，它还被深刻地贯彻在管理学、心理学、纳米科技、神经网络中。
 
-在阅读完必要的资料之后，我先对高数和线代课本上的题目进行初步搜索。
+其实，我们自小到大的学习过程中，无不例外地都在使用这一种学习思想：在学习走路时，我们把步行分解成抬腿、下脚、换腿、停止等步骤；在最初的计算过程时，我们其实也是像计算机一样，按照存储-调用-运算-结果输出的过程解决问题，只是我们在反复的训练过程中得以缩短这一个过程，使其几乎是瞬间进行的。
 
-最后我确定了以下的几道题目
+在自顶向下的过程中，最关键的两个字，其实就是分解。
 
-    1)北大版高等数学（第二版）Page 52 第三题第三小题
+![](https://images2017.cnblogs.com/blog/999371/201708/999371-20170806194911678-1554398745.png)
 
-    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx2s2kj20u0140dhd.jpg)
+#二、实例:洗衣机控制程序
 
-    2)北大版高等数学（第二版）Page 199 第一题第三小题
+![](https://goss1.vcg.com/creative/vcg/800/version23/VCG41170753623.jpg)
 
-    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8sx0fwbj20u0140ab7.jpg)
+1) 伪代码表达大步骤的过程（即分解的过程）
 
-    3)机械工程出版社《线性代数及其应用》(第三版) Page 5 Example
+选择模式、水位要求、浸水要求时间、电机要求转动时间、烘干时间
 
-    ![](https://wx4.sinaimg.cn/mw690/a093d017gy1fxe8sx2b65j21400u0mzi.jpg)
+注水
 
-    4)机械工程出版社《线性代数及其应用》(第三版) Page 189 Example
+浸泡
 
-    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx1fz3j21400u0jt8.jpg)
+电机转动
 
-4) 使用python编程
+排水
 
-5) 编写实验报告
+烘干
 
-## 三、实验数据与结果
+结束
 
-1)
-   
-    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8swzxszj20dy090q32.jpg)
+2) 伪代码执行小步骤的过程（即下层级的解决问题过程）
 
-    答案正确。
+READ   水位；时间
 
-2)
+WHILE   水位低于要求
+
+    REPEAT  注水
+
+ENDWHILE
+
+WHILE   时间短于浸水要求时间
+
+    REPEAT  浸水
+
+    INCREASE    浸泡实际时间
+
+ENDWHILE
+
+WHILE   电机运行时间短于电机要求转动时间
+
+    REPEAT  电机转动
+
+    INCREASE 电机实际运行时间 
+    
+ENDWHILE
+
+WHILE   水位不等于0
+
+    REPEAT  排水
+
+ENDWHILE
+
+WHILE   烘干实际时间小于烘干要求时间   
+
+    REPEAT  烘干
+
+    INCREASE  烘干实际时间
+
+ENDWHILE
+
+END
+
+
+# 游戏博客
+
+---
+layout: default
+title: 游戏策划和设计
+---
+
+楔子(Setting)：
+
+很久很久以前，巨龙突然出现，它会分裂，带来灾难，带走公主。勇者达拉崩吧带上最好的地雷枪，翻过最高的山，拯救公主。
+
+玩法(Gameplay)：
+
+玩家射死巨龙，杀的越多越好。玩家被杀，任务失败。玩家可使用键盘左右键移动躲避巨龙，用鼠标发出地雷。 
+
+人设与道具（Game Sprites）：
+
+Player：达拉崩吧。有很弱的生命值，不可以抵抗多次撞击。可以360旋转，连续无限量向前射击。
+
+## Boss: 
+
+红巨龙"血量极厚
+      
+绿巨龙"体积极大
+
+蓝巨龙"普通巨龙
+
+黄巨龙"最强巨龙
+…
+
+## Player：达拉崩吧                                           
+
+![](https://wx3.sinaimg.cn/mw690/a093d017ly1fw18fb9elsj204m04m74w.jpg)
+
+
+
+
+|合作 子弹      | events：Set angel toward(Mouse.X,Mouse.Y) 
+
+|              | Spawn Buttle on Layer 1                   |
+
+|              | On collision with Buttle:                 |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Subtract 1 from Health                    |
+
+|              | Health<=0:                                |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Destory                                   |
+
+
   
-    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8sx09cpj20al030dfn.jpg)
-
-    答案正确。
-
-    使用pprint语句可以使结果更加符合数学审美。
-
-3)
-   
-    ![](https://wx2.sinaimg.cn/mw690/a093d017gy1fxe8swzlxuj20dd05zdfs.jpg)
-
-    答案正确。
-
-    线性代数得到的结果会自动生成一个结果行向量，但是后面会多出来一个“.”号。
-
-4)
-   
-    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx0rkkj20ng04xq2v.jpg)
-
-    答案正确。
-
-    计算行列式时，不会得到最准确的值，而是一个极其接近的值。
-
-## 四、实验结论
-
-    python 是一种建立在高水平上的一个编程软件，使用python可以简化许多的编程问题。
-
-    python的功能极其强大，对高数问题和线代问题的解决便是其很强大的优点。
-
-    其中 numpy 、 pprint等语句的使用需要格外注意其格式。
+## BOSS：红龙                                              
 
 
+ ![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18fb6iu2j205808z0u9.jpg)
+                                                           
 
+|合作 蓝龙     | Subtract 1 from Health                     |
+
+|     绿龙     | Is outside layout:                         |
+
+|     黑龙     | Set angel to ramdon(360) degree            |
+
+|              | Health<=0:                                |
+
+|              | Subtract 1 from Health                    |
+
+|              | Health<=0:                                |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Destory                                   |
+
+
+## BOSS：蓝龙                                              
+ 
+
+ ![](https://wx2.sinaimg.cn/mw690/a093d017ly1fw18fb8bw0j206805o401.jpg)
+                                                           
+
+|合作 红龙     | Subtract 1 from Health                     |
+
+|     绿龙     | Is outside layout:                         |
+
+|     黑龙     | Set angel to ramdon(360) degree            |
+
+|              | Health<=0:                                |
+
+|              | Subtract 1 from Health                    |
+
+|              | Health<=0:                                |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Destory                                   |
+
+
+## BOSS：绿龙                                              
+ 
+
+![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18fb72nvj206c07tq5r.jpg)
+                                                           
+
+|合作    红龙  | Subtract 1 from Health                     |
+
+|     蓝龙     | Is outside layout:                         |
+
+|     黑龙     | Set angel to ramdon(360) degree            |
+
+|              | Health<=0:                                |
+
+|              | Subtract 1 from Health                    |
+
+|              | Health<=0:                                |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Destory                                   |
+
+
+## BOSS：黑龙                                               
+ 
+
+ ![](https://wx4.sinaimg.cn/mw690/a093d017ly1fw18fb6q4fj203u04t3zc.jpg)
+                                                           
+
+|合作 红龙     | Subtract 1 from Health                     |
+
+|     蓝龙     | Is outside layout:                         |
+
+|     绿龙     | Set angel to ramdon(360) degree            |
+
+|              | Health<=0:                                |
+
+|              | Subtract 1 from Health                    |
+
+|              | Health<=0:                                |
+
+|              | Spawn Exposion on Layer 1                 |
+
+|              | Destory                                   |
+
+
+## Buttle                                                   
+ 
+
+ ![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18u9bc3uj200p00c0hf.jpg)
+                                                           
+
+|合作 达拉崩吧  | On collision with BOSS:                   |
+
+|              | Destory                                   |
+
+
+## Explsion                                                  
+ 
+
+ ![](https://wx4.sinaimg.cn/mw690/a093d017ly1fw18u9cocjj203a02ta9z.jpg)
+                                                           
+
+|合作 达拉崩吧  | Be spawned                                |
+
+|              | Destory                                   |
+
+
+
+# 游戏预览：
+
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏2.gif)
+
+
+![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏3.gif)
+
+![](https://wx4.sinaimg.cn/mw690/a093d017gy1fx5ni5cdplg209e05sb29.gif)

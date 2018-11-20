@@ -1,176 +1,93 @@
 ---
 layout: default
-title: 游戏策划和设计
+title: python 交互式编程实验报告
 ---
 
-楔子(Setting)：
+# python 交互式编程实验报告
 
-很久很久以前，巨龙突然出现，它会分裂，带来灾难，带走公主。勇者达拉崩吧带上最好的地雷枪，翻过最高的山，拯救公主。
+## 一、实验目的
 
-玩法(Gameplay)：
+1) 了解“解释型”语言 python的基本语句和使用方法；
 
-玩家射死巨龙，杀的越多越好。玩家被杀，任务失败。玩家可使用键盘左右键移动躲避巨龙，用鼠标发出地雷。 
+2) 使用 python 做一些相对较复杂的计算。
 
-人设与道具（Game Sprites）：
+## 二、实验过程
 
-Player：达拉崩吧。有很弱的生命值，不可以抵抗多次撞击。可以360旋转，连续无限量向前射击。
+1) 在软工三班学委的帮助下，我先了解了Python的基本用法。
 
-## Boss: 
+附上学委精心制作的链接: https://ks0508.github.io/SE-project/QA2/QA2
 
-红巨龙"血量极厚
-      
-绿巨龙"体积极大
+2) 阅读必要的基本知识
 
-蓝巨龙"普通巨龙
+为了完成对高数和线代作业的简化，我先了解了Python Numpy的相关内容。
 
-黄巨龙"最强巨龙
-…
+[链接](https://zhuanlan.zhihu.com/p/20878530)
 
-## Player：达拉崩吧                                           
+3) 搜集课本的题目
 
-![](https://wx3.sinaimg.cn/mw690/a093d017ly1fw18fb9elsj204m04m74w.jpg)
+在阅读完必要的资料之后，我先对高数和线代课本上的题目进行初步搜索。
 
+最后我确定了以下的几道题目
 
+    1)北大版高等数学（第二版）Page 52 第三题第三小题
 
+    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx2s2kj20u0140dhd.jpg)
 
-|合作 子弹      | events：Set angel toward(Mouse.X,Mouse.Y) 
+    2)北大版高等数学（第二版）Page 199 第一题第三小题
 
-|              | Spawn Buttle on Layer 1                   |
+    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8sx0fwbj20u0140ab7.jpg)
 
-|              | On collision with Buttle:                 |
+    3)机械工程出版社《线性代数及其应用》(第三版) Page 5 Example
 
-|              | Spawn Exposion on Layer 1                 |
+    ![](https://wx4.sinaimg.cn/mw690/a093d017gy1fxe8sx2b65j21400u0mzi.jpg)
 
-|              | Subtract 1 from Health                    |
+    4)机械工程出版社《线性代数及其应用》(第三版) Page 189 Example
 
-|              | Health<=0:                                |
+    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx1fz3j21400u0jt8.jpg)
 
-|              | Spawn Exposion on Layer 1                 |
+4) 使用python编程
 
-|              | Destory                                   |
+5) 编写实验报告
 
+## 三、实验数据与结果
 
+1)
+   
+    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8swzxszj20dy090q32.jpg)
+
+    答案正确。
+
+2)
   
-## BOSS：红龙                                              
+    ![](https://wx3.sinaimg.cn/mw690/a093d017gy1fxe8sx09cpj20al030dfn.jpg)
 
+    答案正确。
 
- ![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18fb6iu2j205808z0u9.jpg)
-                                                           
+    使用pprint语句可以使结果更加符合数学审美。
 
-|合作 蓝龙     | Subtract 1 from Health                     |
+3)
+   
+    ![](https://wx2.sinaimg.cn/mw690/a093d017gy1fxe8swzlxuj20dd05zdfs.jpg)
 
-|     绿龙     | Is outside layout:                         |
+    答案正确。
 
-|     黑龙     | Set angel to ramdon(360) degree            |
+    线性代数得到的结果会自动生成一个结果行向量，但是后面会多出来一个“.”号。
 
-|              | Health<=0:                                |
+4)
+   
+    ![](https://wx1.sinaimg.cn/mw690/a093d017gy1fxe8sx0rkkj20ng04xq2v.jpg)
 
-|              | Subtract 1 from Health                    |
+    答案正确。
 
-|              | Health<=0:                                |
+    计算行列式时，不会得到最准确的值，而是一个极其接近的值。
 
-|              | Spawn Exposion on Layer 1                 |
+## 四、实验结论
 
-|              | Destory                                   |
+    python 是一种建立在高水平上的一个编程软件，使用python可以简化许多的编程问题。
 
+    python的功能极其强大，对高数问题和线代问题的解决便是其很强大的优点。
 
-## BOSS：蓝龙                                              
- 
-
- ![](https://wx2.sinaimg.cn/mw690/a093d017ly1fw18fb8bw0j206805o401.jpg)
-                                                           
-
-|合作 红龙     | Subtract 1 from Health                     |
-
-|     绿龙     | Is outside layout:                         |
-
-|     黑龙     | Set angel to ramdon(360) degree            |
-
-|              | Health<=0:                                |
-
-|              | Subtract 1 from Health                    |
-
-|              | Health<=0:                                |
-
-|              | Spawn Exposion on Layer 1                 |
-
-|              | Destory                                   |
-
-
-## BOSS：绿龙                                              
- 
-
-![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18fb72nvj206c07tq5r.jpg)
-                                                           
-
-|合作    红龙  | Subtract 1 from Health                     |
-
-|     蓝龙     | Is outside layout:                         |
-
-|     黑龙     | Set angel to ramdon(360) degree            |
-
-|              | Health<=0:                                |
-
-|              | Subtract 1 from Health                    |
-
-|              | Health<=0:                                |
-
-|              | Spawn Exposion on Layer 1                 |
-
-|              | Destory                                   |
-
-
-## BOSS：黑龙                                               
- 
-
- ![](https://wx4.sinaimg.cn/mw690/a093d017ly1fw18fb6q4fj203u04t3zc.jpg)
-                                                           
-
-|合作 红龙     | Subtract 1 from Health                     |
-
-|     蓝龙     | Is outside layout:                         |
-
-|     绿龙     | Set angel to ramdon(360) degree            |
-
-|              | Health<=0:                                |
-
-|              | Subtract 1 from Health                    |
-
-|              | Health<=0:                                |
-
-|              | Spawn Exposion on Layer 1                 |
-
-|              | Destory                                   |
-
-
-## Buttle                                                   
- 
-
- ![](https://wx1.sinaimg.cn/mw690/a093d017ly1fw18u9bc3uj200p00c0hf.jpg)
-                                                           
-
-|合作 达拉崩吧  | On collision with BOSS:                   |
-
-|              | Destory                                   |
-
-
-## Explsion                                                  
- 
-
- ![](https://wx4.sinaimg.cn/mw690/a093d017ly1fw18u9cocjj203a02ta9z.jpg)
-                                                           
-
-|合作 达拉崩吧  | Be spawned                                |
-
-|              | Destory                                   |
+    其中 numpy 、 pprint等语句的使用需要格外注意其格式。
 
 
 
-# 游戏预览：
-
-![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏2.gif)
-
-
-![](https://raw.githubusercontent.com/xlcbingo1999/xlc-homework/gh-pages/images/游戏3.gif)
-
-![](https://wx4.sinaimg.cn/mw690/a093d017gy1fx5ni5cdplg209e05sb29.gif)
