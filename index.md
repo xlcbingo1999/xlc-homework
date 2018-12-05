@@ -35,8 +35,8 @@
 
 ## 贪食蛇代码
 
-1. [01-snake_move](snake_move)
-2. [02-snake_eat](snake_eat)
+1. [01-snake_move](snake_move.c)
+2. [02-snake_eat](snake_eat.c)
 
 
 ## Markdown 语法演示
