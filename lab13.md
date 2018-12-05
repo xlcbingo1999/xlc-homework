@@ -62,7 +62,7 @@ title: 贪吃蛇实验报告
 
 2、snake_move 程序代码实现
 
-![](http://5b0988e595225.cdn.sohucs.com/images/20181018/1ee7024979114e5d82ac8913f6788872.jpeg)
+![](https://wx2.sinaimg.cn/mw690/a093d017gy1fxw4fh36qoj20he0ruaa5.jpg)
 
 #include <stdio.h>
 
@@ -243,10 +243,11 @@ int main(){
 
 }
 
-![](http://5b0988e595225.cdn.sohucs.com/images/20181018/44e2a2011518496cb60485fb256f2843.jpeg)
+
 
 3、snake_eat 程序代码实现
 
+![](https://wx2.sinaimg.cn/mw690/a093d017gy1fxw4fh2rmwj20cf0rqt8r.jpg)
 
 #include <stdio.h>
 
