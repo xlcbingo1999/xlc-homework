@@ -57,7 +57,7 @@ title: 贪吃蛇实验报告
 		输出字符矩阵
 
 	END WHILE
-    
+
 	输出 Game Over!!! 
 
 2、snake_move 程序代码实现
@@ -245,7 +245,7 @@ int main(){
 
 ![](http://5b0988e595225.cdn.sohucs.com/images/20181018/44e2a2011518496cb60485fb256f2843.jpeg)
 
-2、snake_eat 程序代码实现
+3、snake_eat 程序代码实现
 
 
 #include <stdio.h>
@@ -374,15 +374,15 @@ void set_money(){
 
 	 srand((unsigned)(time(NULL)));
 
-     money_x = rand() % 9 + 1;
+     money_x = rand() % 10;
 
-     money_y = rand() % 9 + 1;
+     money_y = rand() % 10;
 
     while (map[money_y][money_x] != ' ') {
 
-        money_x = rand() %  9 + 1 ;
+        money_x = rand() %  10 ;
 
-        money_y = rand() %  9 + 1 ;
+        money_y = rand() %  10 ;
 
     }
 

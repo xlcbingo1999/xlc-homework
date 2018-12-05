@@ -1,9 +1,8 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define SNAKE_MAX_LENGTH 30
+#define SNAKE_MAX_LENGTH 20
 #define SNAKE_HEAD 'H'
 #define SNAKE_BOOY 'X'
 #define BLANK_CELL ' '
@@ -24,14 +23,14 @@ char map[12][12] =
 "*          *",
 "*          *",
 "*          *",
-"************"};
+"************"};// I change the way of snake.
 
 
 int snake_length = 5;
-int snake_location_y[20] = {5, 4, 3, 2, 1};
-int snake_location_x[20] = {1, 1, 1, 1, 1};
-int money_x;
-int money_y;
+int snake_location_y[10] = {5, 4, 3, 2, 1};
+int snake_location_x[10] = {1, 1, 1, 1, 1};
+int food_x;
+int food_y;
 
 void snake_move(){
 	int i;
@@ -41,7 +40,7 @@ void snake_move(){
 		snake_location_y[i] = snake_location_y[i-1];
 		map[snake_location_y[i]][snake_location_x[i]] = 'X';
 	}
-}// In thie funtion, you can move the "x"s.
+}// You can diverse four "X"s and a "H".For every "X", it will do the same thing, just going rightaway.
 
 void output(){
 	int i,j; 
@@ -51,7 +50,9 @@ void output(){
 		}
 		printf("\n");
 	}
-}// Output the map.
+}// In this step, you can print the map.
+
+
 
 int gameover(){
 	if(snake_location_x[0] == 11 || snake_location_x[0] == 0){
@@ -66,25 +67,13 @@ int gameover(){
 			return 0;
 	}
 	return 1;
-}//When the snake hits the wall or it hits itself, it will die, with the game overing.
-
-void set_money(){
-	 srand((unsigned)(time(NULL)));
-     money_x = rand() % 10 ;
-     money_y = rand() % 10 ;
-    while (map[money_y][money_x] != ' ') {
-        money_x = rand() %  10  ;
-        money_y = rand() %  10  ;
-    }
-    map[money_y][money_x] = '$';
-}// To not let "&" changes the wall, we should set two random value.
+} // In this funtion, if the snake hits the wall, the funtion will return "0".
 
 int main(){
-	set_money();
-	output();
+	output();// To let player know the first location of the snake.
 	while(ture){
-	char putin;
-	scanf(" %c",&putin);// Put in "a" or "s" or "d" or "w".
+	char putin;// You can put in w/a/s/d .
+	scanf(" %c",&putin);
 	snake_move();
 		if(putin == 'd'){
 			snake_location_x[0] += 1;
@@ -101,10 +90,6 @@ int main(){
 		if(putin == 's'){
 			snake_location_y[0] += 1;
 			map[snake_location_y[0]][snake_location_x[0]] = 'H';
-		} 
-		if(snake_location_x[0] == money_x && snake_location_y[0] == money_y){
-			set_money();
-			++ snake_length;// Just add the length of snake. 
 		} 
 		if(!gameover()){
 			printf("Gameover!!!");
