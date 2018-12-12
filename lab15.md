@@ -44,13 +44,13 @@ title: 只能蛇实验报告
 
 下载网址：https://www.ubuntu.com/download/desktop
 
-![]()
+![](https://wx3.sinaimg.cn/mw690/a093d017gy1fy4cysw0ldj21ay0lagnz.jpg)
 
 2) Oracle VM VirtualBox 下载
 
 下载网址：https://www.virtualbox.org/wiki/Downloads
 
-![]()
+![](https://wx2.sinaimg.cn/mw690/a093d017gy1fy4cyvb1jlj21fx0ovk2d.jpg)
 
 3) 编译环境调整
 
@@ -58,7 +58,11 @@ title: 只能蛇实验报告
 
 安装gcc：
 
-![]()
+![](https://wx3.sinaimg.cn/mw690/a093d017gy1fy4cywfk60j20wa0mlgrb.jpg)
+
+![](https://wx1.sinaimg.cn/mw690/a093d017gy1fy4cyxadgyj20vs0jvjyl.jpg)
+
+![](https://wx4.sinaimg.cn/mw690/a093d017gy1fy4cyziqpjj20vs0jvwm4.jpg)
 
 打开终端，输入 sudo apt-get update 后 输入 sudo apt-get install gcc 输入密码后即可安装GCC。
 
@@ -304,7 +308,7 @@ in-demo.c 的代码如下：
  	}
 
 
-![]()
+![](https://wx4.sinaimg.cn/mw690/a093d017gy1fy4cz0q2yvj20ny0ketab.jpg)
 
 2、实现 kbhit() 
 
@@ -410,7 +414,7 @@ in-demo.c 的代码如下：
 
 我的人工智能程序，使得 snake 每秒自动走一步。
 
-
+![](https://wx4.sinaimg.cn/mw690/a093d017gy1fy4cz22y2oj205e0a33yg.jpg)
 
 1、程序要求
 
