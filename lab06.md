@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 摩尔定律还有效吗？
+title: X现象背后的IT规律
 ---
 
 # 摩尔定律还有效吗？
